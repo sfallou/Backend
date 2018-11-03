@@ -1,0 +1,99 @@
+AppBundle\Entity\Category:
+     attributes:
+         id:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         name:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         articles:
+             groups: ['category']
+
+
+AppBundle\Entity\Article:
+     attributes:
+         id:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         name:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         description:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         thumb:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         prix:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         option_f2:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         ponderation:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         dureeLivraison:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         images:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         category:
+             groups: ['article']
+
+
+AppBundle\Entity\User:
+     attributes:
+         id:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         firstname:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         lastname:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         email:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         password:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         phone:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         address:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         profil:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         actif:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         avatar:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         paniers:
+             groups: ['user']
+
+AppBundle\Entity\Panier:
+     attributes:
+         id:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         dateCreation:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         montant:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         etat:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         user:
+             groups: ['panier']
+         commandes:
+             groups: ['panier']
+
+AppBundle\Entity\Commande:
+     attributes:
+         id:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         dateCreation:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+#         id_article:
+#             groups: ['user', 'panier', 'commande', 'category', 'article']
+         article:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         qty_f1:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         montant_f1:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         qty_f2:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         montant_f2:
+             groups: ['user', 'panier', 'commande', 'category', 'article']
+         panier:
+             groups: ['commande']
+         
+
+
+
+

@@ -1,0 +1,25 @@
+app:
+    resource: "@AppBundle/Controller/DefaultController.php"
+    type:     annotation
+
+
+users:
+    type:     rest
+    resource: AppBundle\Controller\UserController
+
+articles:
+    type:     rest
+    resource: AppBundle\Controller\ArticleController
+
+categories:
+    type:     rest
+    resource: AppBundle\Controller\CategoryController
+
+paniers:
+    type:     rest
+    resource: AppBundle\Controller\PanierController
+
+commandes:
+    type:     rest
+    resource: AppBundle\Controller\CommandeController
+
