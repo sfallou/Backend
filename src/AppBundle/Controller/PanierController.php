@@ -44,6 +44,23 @@ class PanierController extends Controller
 
         return $panier;
     }
+    
+    /**
+     * @Rest\View(serializerGroups={"panier"})
+     * @Rest\Get("/paniers/actif/user/{idUser}")
+     */
+    public function getPanierActifAction(Request $request)
+    {
+        $paniers = $this->get('doctrine.orm.entity_manager')
+        ->getRepository('AppBundle:Panier')
+        ->findBy(array('user' => $request->get('idUser'), 'etat' => 'actif'));
+        
+        if (empty($paniers)) {
+            return \FOS\RestBundle\View\View::create(['message' => 'Panier not found'], Response::HTTP_NOT_FOUND);
+        }
+        
+        return $paniers;
+    }
 
     /**
      * @Rest\View(serializerGroups={"panier"})
@@ -111,6 +128,11 @@ class PanierController extends Controller
                     ->find($request->get('id'));
        
         if ($panier) {
+            $commandes = $panier->getCommandes();
+            foreach ($commandes as $commande) {
+                $em->remove($commande);
+                $em->flush();
+            }
             $em->remove($panier);
             $em->flush();
         }

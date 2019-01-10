@@ -87,6 +87,11 @@ class CommandeController extends Controller
             $em = $this->get('doctrine.orm.entity_manager');
             $em->persist($commande);
             $em->flush();
+            $somme = $commande->getMontantF1()+$commande->getMontantF2()+$panier->getMontant();
+            $panier->setMontant($somme);
+            $em = $this->get('doctrine.orm.entity_manager');
+            $em->persist($panier);
+            $em->flush();
             return $commande;
         } else {
             return $form;
